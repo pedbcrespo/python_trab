@@ -21,7 +21,7 @@ def carregar(nome):
             for dado in dados["jogos"]:
                 lista.append(dado)
         except:
-            print("ERRO")
+            print("ERRO - dados_{} nao encontrados".format(nome))
     return lista
 
 def carregar_usuarios():
