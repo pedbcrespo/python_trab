@@ -1,0 +1,41 @@
+{
+    "lista": [
+        {
+            "nome": "GTA V",
+            "empresa": "Rockstar",
+            "lancamento": 2013,
+            "genero": "acao",
+            "plataformas": ["PS3", "PS4", "PC", "XBOX 360", "XBOX ONE"],
+            "avaliacao":98.5,
+            "preco_medio":99.00
+        },
+        {
+            "nome": "The elder scrolls: Skyrim",
+            "empresa": "Bethesda",
+            "lancamento": 2011,
+            "genero": "RPG",
+            "plataformas": ["PS3", "PS4", "PC", "XBOX 360", "XBOX ONE"],
+            "avaliacao":95.7,
+            "preco_medio":140.00
+        },
+        {
+            "nome": "God of war",
+            "empresa": "SIE Santa Monica Studio",
+            "lancamento": 2018,
+            "genero": "aventura",
+            "plataformas": ["PS4"],
+            "avaliacao":96.5,
+            "preco_medio":157.80
+        },
+        {
+            "nome": "Zelda breath of the wild",
+            "empresa": "Nintendo",
+            "lancamento": 2017,
+            "genero": "RPG",
+            "plataformas": ["Nintendo Switch", "Wii U"],
+            "avaliacao":94.9,
+            "preco_medio":125.72
+        }
+        
+    ]
+}

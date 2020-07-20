@@ -1,0 +1,127 @@
+{
+    "jogos": [
+        {
+            "nome": "GTA V",
+            "empresa": "Rockstar",
+            "lancamento": 2013,
+            "genero": "acao",
+            "plataformas": [
+                "PS3",
+                "PS4",
+                "PC",
+                "XBOX 360",
+                "XBOX ONE"
+            ],
+            "avaliacao": 98.5,
+            "preco_medio": 99.0,
+            "id": 1
+        },
+        {
+            "nome": "The Elder Scrolls: Skyrim",
+            "empresa": "Bethesda",
+            "lancamento": 2011,
+            "genero": "RPG",
+            "plataformas": [
+                "PS3",
+                "PS4",
+                "PC",
+                "XBOX 360",
+                "XBOX ONE"
+            ],
+            "avaliacao": 95.6,
+            "preco_medio": 100.5,
+            "id": 2
+        },
+        {
+            "nome": "God of War",
+            "empresa": "SIE Santa Monica Studio",
+            "lancamento": 2018,
+            "genero": "RPG",
+            "plataformas": [
+                "PS4"
+            ],
+            "avaliacao": 97.2,
+            "preco_medio": 142.3,
+            "id": 3
+        },
+        {
+            "nome": "Zelda breath of the wild",
+            "empresa": "Nintendo",
+            "lancamento": 2017,
+            "genero": "RPG",
+            "plataformas": [
+                "Nintendo Switch",
+                "Wii U"
+            ],
+            "avaliacao": 96.0,
+            "preco_medio": 132.4,
+            "id": 4
+        },
+        {
+            "nome": "The last of us part 2",
+            "empresa": "Nautdog",
+            "lancamento": 2020,
+            "genero": "aventura",
+            "plataformas": [
+                "PS4"
+            ],
+            "avaliacao": 52.0,
+            "preco_medio": 155.0,
+            "id": 5
+        },
+        {
+            "nome": "Ghost of Tsushima",
+            "empresa": "Sucker Punch",
+            "lancamento": 2020,
+            "genero": "acao",
+            "plataformas": [
+                "PS4"
+            ],
+            "avaliacao": 85.0,
+            "preco_medio": 230.0,
+            "id": 6
+        },
+        {
+            "nome": "Batman Arkham City",
+            "empresa": "Rocksteady",
+            "lancamento": 2011,
+            "genero": "acao",
+            "plataformas": [
+                "PS3",
+                "PS4",
+                "XBOX 360",
+                "XBOX ONE",
+                "PC",
+                "Wii U"
+            ],
+            "avaliacao": 96.7,
+            "preco_medio": 89.99,
+            "id": 7
+        },
+        {
+            "nome": "Halo wars",
+            "empresa": "343 Industries",
+            "lancamento": 2017,
+            "genero": "acao",
+            "plataformas": [
+                "XBOX ONE",
+                "PC"
+            ],
+            "avaliacao": 89.5,
+            "preco_medio": 140.5,
+            "id": 8
+        },
+        {
+            "nome": "Forza Horizon 4",
+            "empresa": "Playground Games",
+            "lancamento": 2018,
+            "genero": "corrida",
+            "plataformas": [
+                "XBOX ONE"
+            ],
+            "avaliacao": 97.0,
+            "preco_medio": 139.9,
+            "id": 9
+        }
+    ]
+}
