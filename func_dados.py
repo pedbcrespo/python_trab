@@ -22,7 +22,7 @@ def carregar_jogos():
 
 def salvar(elem):
     '''
-        :param lista: uma lista de dicionarios
+        :param lista: uma lista de dicionarios, ou seja, {'nome_do_campo': variavel}
         :return: True se der certo, False se der errado
     '''
     def _slv(lista):
