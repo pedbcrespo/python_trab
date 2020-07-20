@@ -1,13 +1,4 @@
 import json
-'''
-    só coloca o arquivo no projeto e no arquivo principal, ou seja, onde todo o trabalho vai acontecer
-    coloca em uma das primeiras linhas: import func_dados
-    para acessar as funçoes:
-    variavel = func_dados.carregar_usuarios()
-    variavel = func_dados.carregar_jogos()
-    variavel = func_dados.salvar_usuarios(variavel_lista_usuarios) 
-    variavel = func_dados.salvar_jogos(variavel_lista_jogos)     
-'''
 
 def carregar(nome):
     '''
