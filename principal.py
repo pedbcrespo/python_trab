@@ -1,6 +1,10 @@
 import datetime
 import func_dados
 
+'''
+    Para salvar usuarios no arquivo, tem a funçao:
+    func_dados.salvar_usuarios('lista_de_usuarios')
+'''
 
 
 def menu():

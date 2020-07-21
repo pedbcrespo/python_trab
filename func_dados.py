@@ -6,7 +6,7 @@ def carregar(arquivo):
             dados = json.load(json_file)
             return dados
         except:
-            print('ERRO')    
+            print('ERRO ao carregar')    
             return False
             
 def carregar_campo(camp):
@@ -14,10 +14,9 @@ def carregar_campo(camp):
     :return: uma lista de dicionarios do arquivo .json
     '''
     lista = []
-    with open('dados.json','r') as json_file:
-        dados = carregar('dados.json')
-        for dado in dados[camp]:
-            lista.append(dado)
+    dados = carregar('dados.json')
+    for dado in dados[camp]:
+        lista.append(dado)
     return lista
 
 def carregar_usuarios():
@@ -38,9 +37,9 @@ def salvar(camp):
 
     return slv
                 
-salvar_usuarios = salvar("usuario")
+salvar_usuarios = salvar("usuarios")
 salvar_jogos = salvar("jogos")
 
 
 if __name__ == '__main__':
-    print(carregar('dados.json')['usuarios'])
+    print(carregar('dados.json')['jogos'])
