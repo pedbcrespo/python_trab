@@ -21,8 +21,8 @@ def menu():
 
 # Funçoes basicas
 
-def insere(jogo, lst):
-    jogo["id"] = len(lst)+1
+def insere(jogo, lst):   
+    jogo["id"] = verifica_id(lst, len(lst)+1)
     lst.append(jogo)
     func_dados.salvar_jogos(lst)
 
@@ -45,12 +45,17 @@ def input_empresa():
         lista.append(input('plataforma: '))
     return lista
 
-
-def busca(lst, param, nome):
+def verifica_id(lst, id):
+    alt = 0
     for elem in lst:
-        if elem[param] == nome:
-            return elem
+        if id == elem['id']:
+            alt += 1
+    return id + alt        
 
+def busca(lst, param, ident):
+    for elem in lst:
+        if elem[param] == ident:
+            return elem
 
 def lista_filtrada(lista):
     return lambda param: lambda condicao: [elem[param] for elem in lista if condicao(elem)] 
@@ -88,8 +93,7 @@ while True:
     
     #imprimir jogos
     elif op == 3:  
-        imprime(lista_jogos)
-    
+        imprime(lista_jogos)  
 
     #lista de jogos em determinado ano
     elif op == 4: 
