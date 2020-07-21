@@ -122,6 +122,55 @@
             "avaliacao": 97.0,
             "preco_medio": 139.9,
             "id": 9
+        },
+        {
+            "nome": "Dark souls",
+            "empresa": "Fromsoftware",
+            "lancamento": 2011,
+            "genero": "RPG",
+            "plataformas": [
+                "PS3",
+                "XBOX 360"
+            ],
+            "avaliacao": 96.5,
+            "preco_medio": 95.9,
+            "id": 10
+        },
+        {
+            "nome": "Red dead redemption",
+            "empresa": "Rockstar",
+            "lancamento": 2010,
+            "genero": "acao",
+            "plataformas": [
+                "PS3"
+            ],
+            "avaliacao": 98.3,
+            "preco_medio": 89.9,
+            "id": 11
+        },
+        {
+            "nome": "GTA IV",
+            "empresa": "Rockstar",
+            "lancamento": 2008,
+            "genero": "acao",
+            "plataformas": [
+                "PS3"
+            ],
+            "avaliacao": 94.2,
+            "preco_medio": 80.0,
+            "id": 12
+        },
+        {
+            "nome": "Super Mario odyssey",
+            "empresa": "Nintendo",
+            "lancamento": 2017,
+            "genero": "aventura",
+            "plataformas": [
+                "Nintendo Switch"
+            ],
+            "avaliacao": 96.0,
+            "preco_medio": 130.0,
+            "id": 13
         }
     ]
 }
