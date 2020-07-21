@@ -174,19 +174,6 @@
             "id": 20181613
         },
         {
-            "nome": "Halo wars",
-            "empresa": "343 Industries",
-            "lancamento": 2017,
-            "genero": "acao",
-            "plataformas": [
-                "Xbox One",
-                "PC"
-            ],
-            "avaliacao": 89.0,
-            "preco_medio": 140.5,
-            "id": 20171414
-        },
-        {
             "nome": "Batman Arkham City",
             "empresa": "Rocksteady",
             "lancamento": 2011,
@@ -213,6 +200,18 @@
             "avaliacao": 90.0,
             "preco_medio": 210.0,
             "id": 20201216
+        },
+        {
+            "nome": "Halo wars",
+            "empresa": "343 Industries",
+            "lancamento": 2017,
+            "genero": "acao",
+            "plataformas": [
+                "Xbox One"
+            ],
+            "avaliacao": 89.0,
+            "preco_medio": 105.5,
+            "id": 20171416
         }
     ]
 }

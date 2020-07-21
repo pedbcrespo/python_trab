@@ -40,7 +40,7 @@ def imprime(lst):
 
 # Outras Funçoes nem tao basicas assim
 
-def input_empresa():
+def input_plataforma():
     lista = []
     while int(input('1.add\n0.sair\n')) != 0:
         lista.append(input('plataforma: '))
@@ -50,6 +50,7 @@ def busca(lst, param, ident):
     for elem in lst:
         if elem[param] == ident:
             return elem
+    return None
 
 def lista_filtrada(lista):
     return lambda param: lambda condicao: [elem[param] for elem in lista if condicao(elem)] 
@@ -78,15 +79,18 @@ if __name__ == '__main__':
                     'empresa': input('empresa: '),
                     'lancamento': int(input('lancamento: ')),
                     'genero': input('genero: '),
-                    'plataformas': input_empresa(),
+                    'plataformas': input_plataforma(),
                     'avaliacao': float(input('avaliacao: ')),
                     'preco_medio': float(input('preco: '))
                 }, lista_jogos)
         
         #remover jogo
-        elif op == 2:  
-            remove(busca("nome", input('jogo: '), lista_jogos), lista_jogos)
-        
+        elif op == 2:
+            elem = busca(lista_jogos, "nome", input('jogo: '))
+            if  elem != None:
+                remove(elem, lista_jogos)
+            else:
+                print('Elemento inexistente')
         #imprimir jogos
         elif op == 3:  
             imprime(lista_jogos)  
