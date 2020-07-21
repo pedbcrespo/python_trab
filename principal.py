@@ -2,25 +2,6 @@ import datetime
 import func_dados
 
 
-# Funçoes basicas
-
-def insere(jogo, lst):
-    jogo["id"] = len(lst)+1
-    lst.append(jogo)
-    func_dados.salvar_jogos(lst)
-
-def remove(jogo, lst):
-    lst.remove(jogo)
-    func_dados.salvar_jogos(lst)
-
-def imprime(lst):
-    for elem in lst:
-        for camp in elem:
-            print(camp + ':', elem[camp])
-        print('\n')
-
-# Funçoes auxiliares
-
 def menu():
     print('''
     1. Inserir jogos
@@ -37,35 +18,55 @@ def menu():
           )
     return int(input())
 
+
+# Funçoes basicas
+
+def insere(jogo, lst):
+    jogo["id"] = len(lst)+1
+    lst.append(jogo)
+    func_dados.salvar_jogos(lst)
+
+def remove(jogo, lst):
+    lst.remove(jogo)
+    func_dados.salvar_jogos(lst)
+
+def imprime(lst):
+    for elem in lst:
+        for camp in elem:
+            print('{}: {}'.format(camp, elem[camp]))
+        print('\n')
+
+
+# Outras Funçoes nem tao basicas assim
+
 def input_empresa():
     lista = []
-    while True:
+    while int(input('1.add\n0.sair\n')) != 0:
         lista.append(input('plataforma: '))
-        op = int(input('1.add\n0.sair\n'))
-        if not op:
-            break
     return lista
 
 
-def busca(param, nome, lst):
+def busca(lst, param, nome):
     for elem in lst:
         if elem[param] == nome:
             return elem
 
-# Funçoes Criativas
+
 def lista_filtrada(lista):
     return lambda param: lambda condicao: [elem[param] for elem in lista if condicao(elem)] 
 
-# __MAIN__:
+
 
 
 lista_jogos = func_dados.carregar_jogos()
 lista_usuarios = func_dados.carregar_usuarios()
-filtrada = lista_filtrada(lista_jogos)
 
+filtrada = lista_filtrada(lista_jogos)
 jogos_filtrados = filtrada('nome')
 empresas_filtradas = filtrada('empresa')
 
+
+# __MAIN__:
 while True:
     op = menu()
     #inserir jogo
@@ -103,7 +104,7 @@ while True:
         ano1 = input('periodo 1: ')
         ano2 = input('periodo 2: ')
         if ano2 == '':
-            ano2 = ano=datetime.date.today().year
+            ano2 = ano = datetime.date.today().year
         print(jogos_filtrados(lambda elem: elem['lancamento'] >= int(ano1) and elem["lancamento"] <= int(ano2)))
 
 
@@ -127,6 +128,7 @@ while True:
             i += 1
         opc = int(input())    
         print(jogos_filtrados(lambda elem: elem['empresa'] == list(l_emp)[opc-1]))
+
     #avaliar determinado jogo
     elif op == 9:
         pass
