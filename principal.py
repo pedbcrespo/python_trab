@@ -2,6 +2,7 @@ import datetime
 import func_dados
 
 
+
 def menu():
     print('''
     1. Inserir jogos
@@ -22,7 +23,7 @@ def menu():
 # Funçoes basicas
 
 def insere(jogo, lst):   
-    jogo["id"] = verifica_id(lst, len(lst)+1)
+    jogo["id"] = int(str(jogo['lancamento'])+str(len(jogo['empresa']))+str(len(lst)+1))
     lst.append(jogo)
     func_dados.salvar_jogos(lst)
 
@@ -44,13 +45,6 @@ def input_empresa():
     while int(input('1.add\n0.sair\n')) != 0:
         lista.append(input('plataforma: '))
     return lista
-
-def verifica_id(lst, id):
-    alt = 0
-    for elem in lst:
-        if id == elem['id']:
-            alt += 1
-    return id + alt        
 
 def busca(lst, param, ident):
     for elem in lst:
