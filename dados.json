@@ -212,6 +212,21 @@
             "avaliacao": 89.0,
             "preco_medio": 105.5,
             "id": 20171416
+        },
+        {
+            "nome": "Mirror's Edge",
+            "empresa": "Eletronic Arts",
+            "lancamento": 2008,
+            "genero": "acao",
+            "plataformas": [
+                "PS3",
+                "Xbox 360",
+                "PC"
+            ],
+            "avaliacao": 95.0,
+            "preco_medio": 80.0,
+            "id": 20081417
         }
-    ]
+    ],
+    "usuarios": []
 }
