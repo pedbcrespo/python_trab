@@ -66,75 +66,77 @@ empresas_filtradas = filtrada('empresa')
 
 
 # __MAIN__:
-while True:
-    op = menu()
-    #inserir jogo
-    if op == 1:  
-        insere(
-            {
-                'nome': input('nome: '),
-                'empresa': input('empresa: '),
-                'lancamento': int(input('lancamento: ')),
-                'genero': input('genero: '),
-                'plataformas': input_empresa(),
-                'avaliacao': float(input('avaliacao: ')),
-                'preco_medio': float(input('preco: '))
-            }, lista_jogos)
-    
-    #remover jogo
-    elif op == 2:  
-        remove(busca("nome", input('jogo: '), lista_jogos), lista_jogos)
-    
-    #imprimir jogos
-    elif op == 3:  
-        imprime(lista_jogos)  
 
-    #lista de jogos em determinado ano
-    elif op == 4: 
+if __name__ == '__main__':
+    while True:
+        op = menu()
+        #inserir jogo
+        if op == 1:  
+            insere(
+                {
+                    'nome': input('nome: '),
+                    'empresa': input('empresa: '),
+                    'lancamento': int(input('lancamento: ')),
+                    'genero': input('genero: '),
+                    'plataformas': input_empresa(),
+                    'avaliacao': float(input('avaliacao: ')),
+                    'preco_medio': float(input('preco: '))
+                }, lista_jogos)
         
-        ano = input('ano: ')
-        if ano == '':
-            ano = ano=datetime.date.today().year
-        print(jogos_filtrados(lambda elem: elem['lancamento']==int(ano)))
+        #remover jogo
+        elif op == 2:  
+            remove(busca("nome", input('jogo: '), lista_jogos), lista_jogos)
+        
+        #imprimir jogos
+        elif op == 3:  
+            imprime(lista_jogos)  
 
-    #lista de jogos de um determinado periodo
-    elif op == 5: 
-        ano1 = input('periodo 1: ')
-        ano2 = input('periodo 2: ')
-        if ano2 == '':
-            ano2 = ano = datetime.date.today().year
-        print(jogos_filtrados(lambda elem: elem['lancamento'] >= int(ano1) and elem["lancamento"] <= int(ano2)))
+        #lista de jogos em determinado ano
+        elif op == 4: 
+            
+            ano = input('ano: ')
+            if ano == '':
+                ano = ano=datetime.date.today().year
+            print(jogos_filtrados(lambda elem: elem['lancamento']==int(ano)))
+
+        #lista de jogos de um determinado periodo
+        elif op == 5: 
+            ano1 = input('periodo 1: ')
+            ano2 = input('periodo 2: ')
+            if ano2 == '':
+                ano2 = ano = datetime.date.today().year
+            print(jogos_filtrados(lambda elem: elem['lancamento'] >= int(ano1) and elem["lancamento"] <= int(ano2)))
 
 
-    #lista de jogos abaixo de determinado preco
-    elif op == 6:
-        valor = float(input("valor: "))
-        print(jogos_filtrados(lambda elem: elem["preco_medio"] <= valor))
-    
-    #lista de jogos acima de determinado preco
-    elif op == 7:  
-        valor = float(input("valor: "))
-        print(jogos_filtrados(lambda elem: elem["preco_medio"] >= valor))
-    
-    #lista jogos de uma mesma empresa
-    elif op == 8:
-        i = 1  
-        print('Sub menu:')
-        l_emp = set(empresas_filtradas(lambda elem: True))
-        for elem in l_emp:
-            print(i, elem)
-            i += 1
-        opc = int(input())    
-        print(jogos_filtrados(lambda elem: elem['empresa'] == list(l_emp)[opc-1]))
+        #lista de jogos abaixo de determinado preco
+        elif op == 6:
+            valor = float(input("valor: "))
+            print(jogos_filtrados(lambda elem: elem["preco_medio"] <= valor))
+        
+        #lista de jogos acima de determinado preco
+        elif op == 7:  
+            valor = float(input("valor: "))
+            print(jogos_filtrados(lambda elem: elem["preco_medio"] >= valor))
+        
+        #lista jogos de uma mesma empresa
+        elif op == 8:
+            i = 1  
+            print('Sub menu:')
+            l_emp = set(empresas_filtradas(lambda elem: True))
+            for elem in l_emp:
+                print(i, elem)
+                i += 1
+            opc = int(input())    
+            print(jogos_filtrados(lambda elem: elem['empresa'] == list(l_emp)[opc-1]))
 
-    #avaliar determinado jogo
-    elif op == 9:
-        pass
-    
-    #favoritos
-    elif op == 10:
-        pass
+        #avaliar determinado jogo
+        elif op == 9:
+            pass
+        
+        #favoritos
+        elif op == 10:
+            pass
 
-    #sair
-    else:
-        break
+        #sair
+        else:
+            break
