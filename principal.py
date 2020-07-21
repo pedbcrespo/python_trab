@@ -155,27 +155,27 @@ if __name__ == '__main__':
                 print(jogos_filtrados(lambda elem: elem['genero'] == list(lst)[opc-1]))
             
 
-        #lista de jogos de um determinado periodo
+        #
         elif op == 5: 
             pass
 
-        #lista de jogos abaixo de determinado preco
+        #
         elif op == 6:
             pass
         
-        #lista de jogos acima de determinado preco
+        #
         elif op == 7:  
             pass
         
-        #lista jogos de uma mesma empresa
+        #
         elif op == 8:
             pass
 
-        #avaliar determinado jogo
+        #
         elif op == 9:
             pass
         
-        #favoritos
+        #
         elif op == 10:
             pass
 
