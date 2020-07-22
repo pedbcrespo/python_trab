@@ -7,7 +7,7 @@ def carregar(arquivo):
             return dados
         except:
             print('ERRO ao carregar')    
-            return False
+            return {}
             
 def carregar_campo(camp):
     '''
