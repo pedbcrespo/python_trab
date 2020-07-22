@@ -43,3 +43,6 @@ salvar_jogos = salvar("jogos")
 
 if __name__ == '__main__':
     print(carregar('dados.json')['jogos'])
+    usuarios = ['Pedro', "Leonardo", "Lucas"]
+    salvar_usuarios(usuarios)
+    print(carregar('dados.json')['usuarios'])

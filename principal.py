@@ -39,7 +39,7 @@ def sub_opc(func):
         print(i, elem)
         i += 1
     opc = int(input())
-    return opc, lst 
+    return opc-1, lst 
 # Funçoes basicas
 
 def insere(jogo, lst):   
@@ -73,7 +73,7 @@ def busca(lst, param, ident):
     return None
 
 def lista_filtrada(lista):
-    return lambda param: lambda condicao: [elem[param] for elem in lista if condicao(elem)] 
+    return lambda camp: lambda condicao: [elem[camp] for elem in lista if condicao(elem)] 
 
 
 
@@ -123,13 +123,13 @@ if __name__ == '__main__':
             if op2 == 1:
                 ano = input('ano: ')
                 if ano == '':
-                    ano = ano=datetime.date.today().year
+                    ano = datetime.date.today().year
                 print(jogos_filtrados(lambda elem: elem['lancamento']==int(ano)))
             
             #Lista de jogos de determinado periodo
             elif op2 == 2:
-                ano1 = input('periodo 1: ')
-                ano2 = input('periodo 2: ')
+                ano1 = input('ano inicio: ')
+                ano2 = input('ano fim: ')
                 if ano2 == '':
                     ano2 = ano = datetime.date.today().year
                 print(jogos_filtrados(lambda elem: elem['lancamento'] >= int(ano1) and elem["lancamento"] <= int(ano2)))
@@ -147,12 +147,12 @@ if __name__ == '__main__':
             #Lista de jogos de uma mesma empresa
             elif op2 == 5:
                 opc,lst = sub_opc(empresas_filtradas)  
-                print(jogos_filtrados(lambda elem: elem['empresa'] == list(lst)[opc-1]))
+                print(jogos_filtrados(lambda elem: elem['empresa'] == list(lst)[opc]))
             
             #Lista de jogos de um mesmo genero
             elif op2 == 6:
                 opc,lst = sub_opc(generos_filtrados)
-                print(jogos_filtrados(lambda elem: elem['genero'] == list(lst)[opc-1]))
+                print(jogos_filtrados(lambda elem: elem['genero'] == list(lst)[opc]))
             
 
         #

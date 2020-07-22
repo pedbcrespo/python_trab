@@ -226,6 +226,18 @@
             "avaliacao": 95.0,
             "preco_medio": 80.0,
             "id": 20081417
+        },
+        {
+            "nome": "Uncharted 2",
+            "empresa": "Naughty Dog",
+            "lancamento": 2009,
+            "genero": "aventura",
+            "plataformas": [
+                "PS3"
+            ],
+            "avaliacao": 96.0,
+            "preco_medio": 145.5,
+            "id": 20091118
         }
     ],
     "usuarios": []
