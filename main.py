@@ -37,11 +37,7 @@ def ID_Gerador(lst):
     #Garante que o ID gerador é uma unidade acima do maior ID criando um novo
     IDvago = IDvago + 1
     return IDvago
-
-#Inserir
-def insere(jogo, lst):
-    lst.append(jogo)
-
+    
 #Remover
 #não ta funcionando
 def remove(lst, ID):
@@ -107,12 +103,7 @@ def lista_empresa():
     lista = []
     while True:
         lista.append(input('Plataforma: '))
-        Operador = False
-        while (Operador == False):
-            op = input('1.Continuar adicionando\n0.Prosseguir\n')
-            if (e_int(op) == True):
-                Operador = True
-        if (Operador):
+        if input('1.Continuar adicionando\n0.Prosseguir\n') == '0':
             break
     return lista
 
@@ -133,7 +124,7 @@ def preco():
     numero = 0
     Operador = False
     while (Operador == False):
-        numero = input("Digite um ano válido: ")
+        numero = input("Digite um preco válido: ")
         if (e_float(numero) == True):
             Operador = True
     return numero
@@ -168,7 +159,7 @@ if __name__ == '__main__':
         # insere
         if op == 1:  
             #Apenas Inicializando
-            jogo = {"nome": "The Elder Scrolls: Skyrim",'empresa': "Bethesda",'lancamento': 2011,'genero': 'RPG',        'plataformas': ['PS3', 'PS4', 'PC', 'XBOX 360', 'XBOX ONE'],        'avaliacao':95.6,        'preco_medio':100.5}
+            jogo = {}
             jogo['ID'] = ID_Gerador(lst)
             jogo['nome'] = input('Nome: ')
             jogo['empresa'] = input('Empresa: ')
@@ -177,7 +168,8 @@ if __name__ == '__main__':
             jogo['plataformas'] = lista_empresa()
             jogo['avaliacao'] = review()
             jogo['preco_medio'] = preco()
-            lst.append(jogo)
+            lista_jogos.append(jogo)
+            func_dados.salvar_jogos(lista_jogos)
         
         # remove
         if op == 2:  
@@ -187,11 +179,11 @@ if __name__ == '__main__':
                 if (e_int(numero) == True):
                     enviar = int(numero)
                     operador = True
-            lst = remove(lst, enviar)
-        
+            lista_jogos = remove(lista_jogos, enviar)
+            func_dados.salvar_jogos(lista_jogos)
         # imprime
         if op == 3:  
-            imprime(lst)
+            imprime(lista_jogos)
 
         # lista sob condicao
         if op == 4: 

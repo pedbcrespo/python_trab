@@ -10,9 +10,6 @@ def carregar(arquivo):
             return {"jogos":[],"usuarios":[]}
             
 def carregar_campo(camp):
-    '''
-    :return: uma lista de dicionarios do arquivo .json
-    '''
     return carregar('dados.json')[camp]
 
 def carregar_usuarios():
