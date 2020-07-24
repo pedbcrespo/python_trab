@@ -1,5 +1,4 @@
 import datetime
-import operator
 import func_dados
 
 
@@ -86,6 +85,14 @@ def sub_menu_lista():
         )
     return int(input())
 
+def sub_opc(func):
+    i = 1
+    lista = set(func(lambda elem: True))
+    for elem in sorted(list(lista)):
+        print('{}. {}'.format(i, elem))
+        i += 1
+
+    return int(input())-1, sorted(list(lista))
 
 def ano():
     numero = 0
@@ -140,6 +147,7 @@ def busca(lst, param, ident):
 def lista_filtrada(lista):
     return lambda camp: lambda condicao: [elem[camp] for elem in lista if condicao(elem)] 
 
+
 lista_jogos = func_dados.carregar_jogos()
 lista_usuarios = func_dados.carregar_usuarios()
 
@@ -161,7 +169,7 @@ if __name__ == '__main__':
         if op == 1:  
             #Apenas Inicializando
             jogo = {"nome": "The Elder Scrolls: Skyrim",'empresa': "Bethesda",'lancamento': 2011,'genero': 'RPG',        'plataformas': ['PS3', 'PS4', 'PC', 'XBOX 360', 'XBOX ONE'],        'avaliacao':95.6,        'preco_medio':100.5}
-            jogo['ID'] = ID_Gerador(lista)
+            jogo['ID'] = ID_Gerador(lst)
             jogo['nome'] = input('Nome: ')
             jogo['empresa'] = input('Empresa: ')
             jogo['lancamento'] = ano()
@@ -223,3 +231,4 @@ if __name__ == '__main__':
             elif op2 == 6:
                 opc,lst = sub_opc(generos_filtrados)
                 print(jogos_filtrados(lambda elem: elem['genero'] == list(lst)[opc]))
+        
