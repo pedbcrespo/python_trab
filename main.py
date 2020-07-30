@@ -26,12 +26,6 @@ def sub_opc(func):
 
     return int(input())-1, sorted(list(lista))
 
-def busca(lst, param, ident):
-    for elem in lst:
-        if elem[param] == ident:
-            return elem
-    return None
-
 def lista_filtrada(lista):
     return lambda camp: lambda condicao: [elem[camp] for elem in lista if condicao(elem)] 
 
@@ -134,15 +128,15 @@ def menu_usuario(lista_jogos):
                     a = 1
                     user = input("Digite o nome de usuario: ")
                     for i in range (0, len(lista_usuarios)):
-                        if user == lista_usuarios[i]['Nome']:
+                        if user == lista_usuarios[i]['nome']:
                             print("Nome de Usuario já existente")
                             a = 0
                
                 favorito = criafav(lista_jogos, [])                     
 
                 usuario = {
-                    "Nome": user,
-                    "Jogos": favorito
+                    "nome": user,
+                    "jogos": favorito
                 }
                 lista_usuarios.append(usuario)
                 func_dados.salvar_usuarios(lista_usuarios)
@@ -150,16 +144,16 @@ def menu_usuario(lista_jogos):
             else:
                 existente = 0
                 for i in range(0,len(lista_usuarios)):
-                    if user == lista_usuarios[i]['Nome']:
-                        favorito = lista_usuarios[i]['Jogos']
+                    if user == lista_usuarios[i]['nome']:
+                        favorito = lista_usuarios[i]['jogos']
                         existente = 1
                 
                 if existente == 1:
 
                     favorito = criafav(lista_jogos, favorito)        
                     usuario = {
-                        "Nome": user,
-                        "Jogos": favorito
+                        "nome": user,
+                        "jogos": favorito
                     }
                     lista_usuarios[i] = usuario
                     func_dados.salvar_usuarios(lista_usuarios)
@@ -169,7 +163,7 @@ def menu_usuario(lista_jogos):
 
 def pesquisaID(lista_jogos, x):         
     for i in range(0,len(lista_jogos)):                
-        if int(lista_jogos[i]['id']) == x:
+        if int(lista_jogos[i]['ID']) == x:
             return i
 
     return -1
@@ -194,14 +188,14 @@ def criafav(lista_jogos, favorito):
             if i == -1:
                 print("Jogo não encontrado")
             else:
-                favorito.append(lista_jogos[i]['id'])
+                favorito.append(lista_jogos[i]['ID'])
                 print("Jogo ", lista_jogos[i]['nome'], "Adicionado a sua lista")
 
         elif op2 == 2:
             jogo = input("Digite o nome do jogo que deseja remover: ")
             i = pesquisaNome(lista_jogos, jogo)
             try:
-                favorito.remove(lista_jogos[i]['id'])
+                favorito.remove(lista_jogos[i]['ID'])
                 print("Jogo Removido")
             except:
                 print("Jogo não esta na sua Lista")
