@@ -108,5 +108,13 @@
             "preco_medio": 250.0
         }
     ],
-    "usuarios": []
+    "usuarios": [
+        {
+            "nome": "Lucas",
+            "jogos": [
+                1,
+                6
+            ]
+        }
+    ]
 }

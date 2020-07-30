@@ -205,7 +205,7 @@ def criafav(lista_jogos, favorito):
 
         elif op2 == 4:
             for i in range(0,len(favorito)):
-                print(lista_jogos[pesquisaID(lista_jogos, favorito[i])])
+                print(lista_jogos[pesquisaID(lista_jogos, favorito[i])]['nome'])
 
     return favorito
 
