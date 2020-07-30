@@ -30,7 +30,7 @@ def lista_filtrada(lista):
     return lambda camp: lambda condicao: [elem[camp] for elem in lista if condicao(elem)] 
 
 filtrada = lista_filtrada(lista_jogos)
-jogos_filtrados = filtrada('nome')
+jogos_filt_nome = filtrada('nome')
 empresas_filtradas = filtrada('empresa')
 generos_filtrados = filtrada('genero')
 
@@ -81,7 +81,7 @@ def ano():
         numero = input("Digite um ano válido: ")
         if (e_int(numero) == True):
             Operador = True
-    return numero
+    return int(numero)
 
 def lista_empresa():
     lista = []
@@ -102,7 +102,7 @@ def review():
             if (numero < 0 or numero > 100):
                 Operador = False
                 print("Entre 0 e 100")
-    return numero
+    return float(numero)
 
 def preco():
     numero = 0
@@ -111,7 +111,7 @@ def preco():
         numero = input("Digite um preco válido: ")
         if (e_float(numero) == True):
             Operador = True
-    return numero
+    return float(numero)
 
 
 # Funcoes Ruivo
@@ -214,7 +214,7 @@ def criafav(lista_jogos, favorito):
 id_jogos = len(lista_jogos) + 1
 id_usuarios = len(lista_usuarios) + 1
 
-
+# MAIN
 if __name__ == '__main__':
     while True:
         op = menu('''
@@ -276,35 +276,39 @@ if __name__ == '__main__':
                 ano = input('ano: ')
                 if ano == '':
                     ano = datetime.date.today().year
-                print(jogos_filtrados(lambda elem: elem['lancamento']==int(ano)))
+                print(jogos_filt_nome(lambda elem: elem['lancamento']==int(ano)))
             
             #Lista de jogos de determinado periodo
             elif op2 == 2:
                 ano1 = input('ano inicio: ')
-                ano2 = input('ano fim: ')
-                if ano2 == '':
-                    ano2 = ano = datetime.date.today().year
-                print(jogos_filtrados(lambda elem: elem['lancamento'] >= int(ano1) and elem["lancamento"] <= int(ano2)))
+                if ano1 == '':
+                    ano1 = datetime.date.today().year
+                    ano2 = datetime.date.today().year
+                else:    
+                    ano2 = input('ano fim: ')
+                    if ano2 == '':
+                        ano2 = datetime.date.today().year
+                print(jogos_filt_nome(lambda elem: elem['lancamento'] >= int(ano1) and elem["lancamento"] <= int(ano2)))
 
             #Lista de jogos abaixo de determinado preco
             elif op2 == 3:
                 valor = float(input("valor: "))
-                print(jogos_filtrados(lambda elem: elem["preco_medio"] <= valor))
+                print(jogos_filt_nome(lambda elem: elem["preco_medio"] <= valor))
 
             #Lista de jogos acima de determinado preco
             elif op2 == 4:
                 valor = float(input("valor: "))
-                print(jogos_filtrados(lambda elem: elem["preco_medio"] >= valor))
+                print(jogos_filt_nome(lambda elem: elem["preco_medio"] >= valor))
 
             #Lista de jogos de uma mesma empresa
             elif op2 == 5:
                 opc,lst = sub_opc(empresas_filtradas)  
-                print(jogos_filtrados(lambda elem: elem['empresa'] == list(lst)[opc]))
+                print(jogos_filt_nome(lambda elem: elem['empresa'] == list(lst)[opc]))
 
             #Lista de jogos de um mesmo genero
             elif op2 == 6:
                 opc,lst = sub_opc(generos_filtrados)
-                print(jogos_filtrados(lambda elem: elem['genero'] == list(lst)[opc]))
+                print(jogos_filt_nome(lambda elem: elem['genero'] == list(lst)[opc]))
     
         # Usuario
         elif op == 5:

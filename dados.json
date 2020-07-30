@@ -4,7 +4,7 @@
             "ID": 1,
             "nome": "GTA V",
             "empresa": "Rockstar",
-            "lancamento": "2013",
+            "lancamento": 2013,
             "genero": "acao",
             "plataformas": [
                 "PS3",
@@ -14,13 +14,13 @@
                 "PC"
             ],
             "avaliacao": 96.0,
-            "preco_medio": "99.9"
+            "preco_medio": 99.9
         },
         {
             "ID": 2,
             "nome": "The elder scrolls V: Skyrim",
             "empresa": "Bethesda",
-            "lancamento": "2011",
+            "lancamento": 2011,
             "genero": "rpg",
             "plataformas": [
                 "PS3",
@@ -29,44 +29,83 @@
                 "Xbox One",
                 "PC"
             ],
-            "avaliacao": 95.0,
-            "preco_medio": "140"
+            "avaliacao": 92.0,
+            "preco_medio": 140.0
         },
         {
             "ID": 3,
             "nome": "Ghost of Tsushima",
             "empresa": "Sucker Punch",
-            "lancamento": "2020",
+            "lancamento": 2020,
             "genero": "aventura",
             "plataformas": [
                 "PS4"
             ],
-            "avaliacao": 92.0,
-            "preco_medio": "250"
+            "avaliacao": 90.0,
+            "preco_medio": 250.0
         },
         {
             "ID": 4,
-            "nome": "The last of us part 2",
-            "empresa": "Naughty Dog",
-            "lancamento": "2020",
-            "genero": "aventura",
-            "plataformas": [
-                "PS4"
-            ],
-            "avaliacao": 52.0,
-            "preco_medio": "250"
-        },
-        {
-            "ID": 5,
             "nome": "Forza Horizon 4",
             "empresa": "Playground Games",
-            "lancamento": "2018",
+            "lancamento": 2018,
             "genero": "corrida",
             "plataformas": [
                 "Xbox One"
             ],
             "avaliacao": 96.0,
-            "preco_medio": "170"
+            "preco_medio": 200.0
+        },
+        {
+            "ID": 5,
+            "nome": "Red dead redemption",
+            "empresa": "Rockstar",
+            "lancamento": 2010,
+            "genero": "acao",
+            "plataformas": [
+                "PS3"
+            ],
+            "avaliacao": 98.0,
+            "preco_medio": 130.0
+        },
+        {
+            "ID": 6,
+            "nome": "The last of us",
+            "empresa": "Naughty Dog",
+            "lancamento": 2013,
+            "genero": "aventura",
+            "plataformas": [
+                "PS3",
+                "PS4"
+            ],
+            "avaliacao": 95.0,
+            "preco_medio": 120.0
+        },
+        {
+            "ID": 7,
+            "nome": "Mirror's Edge",
+            "empresa": "Eletronic Arts",
+            "lancamento": 2008,
+            "genero": "acao",
+            "plataformas": [
+                "PS3",
+                "Xbox 360",
+                "PC"
+            ],
+            "avaliacao": 90.0,
+            "preco_medio": 89.0
+        },
+        {
+            "ID": 8,
+            "nome": "The last of us part 2",
+            "empresa": "Naughty Dog",
+            "lancamento": 2020,
+            "genero": "aventura",
+            "plataformas": [
+                "PS4"
+            ],
+            "avaliacao": 52.0,
+            "preco_medio": 250.0
         }
     ],
     "usuarios": []
