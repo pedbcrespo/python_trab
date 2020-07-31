@@ -69,10 +69,12 @@ def remove(lst, ID):
     return lst
 
 def imprime(lst):
+    txt = ''
     for elem in sorted(lst, key=lambda lst: lst['ID']):
         for camp in elem:
-            print(camp + ':', elem[camp])
-        print('\n')
+            txt += str(camp) + ': '+ str(elem[camp]) + '\n'
+        txt += '\n'
+    return txt
 
 def ano():
     numero = 0
@@ -201,7 +203,7 @@ def criafav(lista_jogos, favorito):
                 print("Jogo não esta na sua Lista")
 
         elif op2 == 3:
-            imprime(lista_jogos)  
+            print(imprime(lista_jogos))  
 
         elif op2 == 4:
             for i in range(0,len(favorito)):
@@ -271,10 +273,10 @@ if __name__ == '__main__':
             ''')
 
             if op2 == 1:
-                imprime(lista_jogos)
+                print(imprime(lista_jogos))
             elif op2 == 2:
-                print(busca_nome(lista_jogos))
-                
+                print(imprime(busca_nome(lista_jogos)))
+
         # lista sob condicao
         elif op == 4: 
             op2 = menu('''
