@@ -56,7 +56,6 @@ def e_float(a):
         return False
 
 #Remover
-#não ta funcionando
 def remove(lst, ID):
     for elem in lst:
         print(type(ID))
@@ -220,8 +219,40 @@ def busca_nome(lista):
             lista_aux.append(lista[i])
     return lista_aux if len(lista_aux) > 0 else 'nao encontrado' 
 
-id_jogos = len(lista_jogos) + 1
-id_usuarios = len(lista_usuarios) + 1
+# Funcoes Leo
+def altera(lista_jogos):
+    x = int(input("Digite o id do jogo que deseja alterar: "))
+
+    if x == -1:
+        print("Jogo não encontrado")
+
+    else:
+        i = pesquisaID(lista_jogos, x)
+        x = 1
+        print(lista_jogos[i])
+        while x != 8:
+
+            x = int(input(
+                "O que deseja Alterar? \n1 - Nome\n2 - Empresa\n3 - Lancamento\n4 - genero\n5 - Avaliacao\n6 - Preco Medio\n7 - Plantaforma\n8 - Sair\n"))
+            if x == 1:
+                lista_jogos[i]['nome'] = input("Digite o nome do jogo para alterar: ")
+            elif x == 2:
+                lista_jogos[i]['empresa'] = input("Digite o nome da empresa para alterar: ")
+            elif x == 3:
+                lista_jogos[i]['lancamento'] = ano()
+            elif x == 4:
+                lista_jogos[i]['genero'] = input("Digite o genero para alterar: ")
+            elif x == 5:
+                lista_jogos[i]['avaliacao'] = review()
+            elif x == 6:
+                lista_jogos[i]['preco_medio'] = preco()
+            elif x == 7:
+                lista_jogos[i]['plataforma'] = lista_empresa()
+
+        func_dados.salvar_jogos(lista_jogos)
+
+id_jogos = len(lista_jogos) + 2
+id_usuarios = len(lista_usuarios) + 2
 
 # MAIN
 if __name__ == '__main__':
@@ -232,6 +263,7 @@ if __name__ == '__main__':
     3. Imprimir
     4. Lista sob condicao
     5. Usuario
+    6. Alterar informacao jogo
     0.sair
             ''')
         
@@ -330,3 +362,6 @@ if __name__ == '__main__':
         # Usuario
         elif op == 5:
             menu_usuario(lista_jogos)
+        
+        elif op == 6:
+            altera(lista_jogos)

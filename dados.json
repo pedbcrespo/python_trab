@@ -106,6 +106,32 @@
             ],
             "avaliacao": 52.0,
             "preco_medio": 250.0
+        },
+        {
+            "ID": 9,
+            "nome": "DOOM Eternal",
+            "empresa": "Id Software",
+            "lancamento": 2020,
+            "genero": "acao",
+            "plataformas": [
+                "PS4",
+                "Xbox One",
+                "PC"
+            ],
+            "avaliacao": 90.0,
+            "preco_medio": 275.0
+        },
+        {
+            "ID": 10,
+            "nome": "GTA IV",
+            "empresa": "Rockstar",
+            "lancamento": 2008,
+            "genero": "acao",
+            "plataformas": [
+                "PS3"
+            ],
+            "avaliacao": 89.0,
+            "preco_medio": 89.9
         }
     ],
     "usuarios": [
