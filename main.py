@@ -209,7 +209,14 @@ def criafav(lista_jogos, favorito):
 
     return favorito
 
-
+# Funcao Alysson
+def busca_nome(lista):
+    lista_aux = []
+    aux = input('nome: ')
+    for i in range(0, len(lista)):
+        if aux in lista[i]['nome']:
+            lista_aux.append(lista[i])
+    return lista_aux if len(lista_aux) > 0 else 'nao encontrado' 
 
 id_jogos = len(lista_jogos) + 1
 id_usuarios = len(lista_usuarios) + 1
@@ -257,9 +264,17 @@ if __name__ == '__main__':
             lista_jogos = remove(lista_jogos, enviar)
             func_dados.salvar_jogos(lista_jogos)
         # imprime
-        elif op == 3:  
-            imprime(lista_jogos)
+        elif op == 3:
+            op2 = menu('''
+        1. Todos os jogos
+        2. Jogos especificos por nome
+            ''')
 
+            if op2 == 1:
+                imprime(lista_jogos)
+            elif op2 == 2:
+                print(busca_nome(lista_jogos))
+                
         # lista sob condicao
         elif op == 4: 
             op2 = menu('''
