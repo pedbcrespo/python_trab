@@ -352,12 +352,12 @@ if __name__ == '__main__':
             #Lista de jogos de uma mesma empresa
             elif op2 == 5:
                 opc,lst = sub_opc(empresas_filtradas)  
-                print(jogos_filt_nome(lambda elem: elem['empresa'] == list(lst)[opc]))
+                print(jogos_filt_nome(lambda elem: elem['empresa'] == lst[opc]))
 
             #Lista de jogos de um mesmo genero
             elif op2 == 6:
                 opc,lst = sub_opc(generos_filtrados)
-                print(jogos_filt_nome(lambda elem: elem['genero'] == list(lst)[opc]))
+                print(jogos_filt_nome(lambda elem: elem['genero'] == lst[opc]))
     
         # Usuario
         elif op == 5:
